@@ -1,11 +1,14 @@
 import { useState } from "react";
 import SearchForm from "../components/SearchForm";
+import { useNavigate } from "react-router-dom";
 
 function HomePage() {
   const [username, setUsername] = useState("");
+  const navigate = useNavigate();
 
   function onSearch(formInput: string) {
     setUsername(formInput);
+    navigate("/user/" + formInput);
   }
 
   return (
