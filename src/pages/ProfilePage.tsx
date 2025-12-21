@@ -1,7 +1,8 @@
-import { useState, useEffect, useEffectEvent } from "react";
+import { useState, useEffect } from "react";
 import { githubService } from "../services/githubService";
 import { useParams } from "react-router-dom";
 import type { IUser } from "../types";
+import UserDetails from "../components/UserDetails";
 
 function ProfilePage() {
   const { username } = useParams<{ username: string }>();
@@ -25,9 +26,12 @@ function ProfilePage() {
     }
   }, [username]);
 
+  if (loading) return <h1>Loading data...</h1>;
+  if (!profileInfo) return <h1>User not found or an error occured.</h1>;
+
   return (
     <div>
-      <p>Statistics for {username}</p>
+      <UserDetails profileInfo={profileInfo} />
     </div>
   );
 }
