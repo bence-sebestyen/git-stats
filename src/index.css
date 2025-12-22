@@ -6,3 +6,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-slate-950 via-slate-950 to-indigo-950 text-slate-50 antialiased;
+    min-height: 100vh;
+  }
+
+  .infocard {
+    @apply p-5 rounded-2xl border border-purple-500/30 shadow-lg bg-slate-900/40 shadow-purple-500/20 flex flex-col items-center justify-center transition-all hover:scale-105 hover:border-purple-500/60;
+  }
+}

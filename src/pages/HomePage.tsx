@@ -1,21 +1,17 @@
-import { useState } from "react";
 import SearchForm from "../components/SearchForm";
 import { useNavigate } from "react-router-dom";
 
 function HomePage() {
-  const [username, setUsername] = useState("");
   const navigate = useNavigate();
 
   function onSearch(formInput: string) {
-    setUsername(formInput);
     navigate("/user/" + formInput);
   }
 
   return (
-    <div>
-      <h1>Analyze your GitHub stats</h1>
+    <div className="flex h-lvh flex-col items-center justify-center">
+      <h1 className="mb-20 text-5xl">visualize your impact</h1>
       <SearchForm onSearch={onSearch} />
-      <h2>{username}</h2>
     </div>
   );
 }

@@ -23,8 +23,8 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
         placeholder="Enter your username..."
         value={formInput}
         onChange={handleChange}
+        className="w-1/3 min-w-50 rounded-3xl border border-purple-500/50 bg-slate-900 px-3 py-2.5 text-center text-sm shadow-2xl shadow-purple-500/50 focus:border-purple-500"
       />
-      <button type="submit">Search</button>
     </form>
   );
 };
