@@ -9,3 +9,11 @@ export interface IUser {
   following: number;
   created_at: string;
 }
+
+export interface IRepository {
+  id: number;
+  name: string;
+  description: string | null;
+  language: string | null;
+  stargazers_count: number;
+}
