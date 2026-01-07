@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -13,15 +14,46 @@
     min-height: 100vh;
   }
 
+  h1 {
+    font-family: "Bricolage Grotesque";
+    font-weight: 700;
+  }
+
+  .glass {
+    @apply bg-slate-900/40 backdrop-blur-xl;
+
+    @apply border border-white/10;
+
+    background-image: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+    @apply shadow-2xl;
+
+    @apply rounded-[2.5rem];
+
+    @apply transition-all duration-300;
+    &:hover {
+      @apply bg-slate-900/50;
+    }
+  }
+
   .infocard {
     @apply p-5 rounded-2xl border border-purple-500/30 shadow-lg bg-slate-900/40 shadow-purple-500/20 flex flex-col items-center justify-center;
   }
 
   .input {
-    @apply rounded-full border border-purple-500/50 bg-slate-900 
-           transition-all shadow-lg shadow-purple-500/10
-           placeholder:text-slate-500
-           focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 
-           hover:border-purple-500/80 text-sm text-center;
+    @apply rounded-full border border-white/10 bg-slate-900/40 backdrop-blur-xl
+           transition-all duration-500 shadow-2xl
+           placeholder:text-slate-500 placeholder:font-light
+           text-white outline-none;
+
+    &:focus {
+      @apply border-purple-500/50 bg-slate-900/60 ring-4 ring-purple-500/10;
+      box-shadow: inset 0 0 20px rgba(168, 85, 247, 0.05);
+    }
+    font-family: "Bricolage Grotesque";
   }
 }
