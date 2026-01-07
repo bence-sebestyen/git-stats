@@ -47,8 +47,8 @@
   .input {
     @apply rounded-full border border-white/10 bg-slate-900/40 backdrop-blur-xl
            transition-all duration-500 shadow-2xl
-           placeholder:text-slate-500 placeholder:font-light
-           text-white outline-none;
+           placeholder:text-slate-600 placeholder:font-light
+           text-white outline-none text-center;
 
     &:focus {
       @apply border-purple-500/50 bg-slate-900/60 ring-4 ring-purple-500/10;

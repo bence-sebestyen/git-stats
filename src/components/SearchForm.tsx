@@ -1,29 +1,43 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type SearchFormProps = {
   onSearch: (username: string) => void;
 };
 
+const placeholders = [
+  "Find a developer...",
+  "Search for octocat...",
+  "Try 'torvalds'...",
+  "Explore the community...",
+  "Analyze a profile...",
+];
+
 const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
   const [formInput, setForminput] = useState("");
+  const [placeholderIndex, setPlaceholderIndex] = useState(0);
 
-  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setForminput(event.target.value);
-  }
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPlaceholderIndex((prev) => (prev + 1) % placeholders.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    onSearch(formInput);
+    if (formInput.trim()) onSearch(formInput);
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="relative group w-full max-w-md">
+      <div className="absolute -inset-1 bg-gradient-to-r from-purple-900 to-blue-900 rounded-full blur-lg opacity-25 group-focus-within:opacity-50 transition duration-700"></div>
       <input
         type="text"
-        placeholder="Enter username..."
+        placeholder={placeholders[placeholderIndex]}
         value={formInput}
-        onChange={handleChange}
-        className="w-1/3 min-w-50 px-3 py-2.5 text-center text-sm shadow-2xl input"
+        onChange={(e) => setForminput(e.target.value)}
+        className="relative w-full h-14 px-6 py-4 text-xl input"
       />
     </form>
   );

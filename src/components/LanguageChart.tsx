@@ -23,7 +23,7 @@ function LanguageChart({ repos }: Props) {
   }, [repos]);
 
   return (
-    <div className="relative w-fit h-fit flex items-center justify-center border">
+    <div className="relative w-fit h-fit flex items-center justify-center">
       <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
         <span className="block w-full text-center text-slate-500 uppercase text-[10px] tracking-widest font-bold">
           Top

@@ -10,8 +10,8 @@ interface Props {
 
 function RepoCard({ name, description, language, stars }: Props) {
   return (
-    <div className="flex group w-full flex-col items-center justify-center rounded-2xl border border-purple-500/30 bg-slate-900/40 px-5 pt-6 pb-5 shadow-lg shadow-purple-500/20 transition-all hover:scale-105 hover:border-purple-500/60">
-      <h1 className="mb-10 text-2xl group-hover:text-purple-400 group-hover:font-bold transition-all duration-100 text-center">
+    <div className="flex w-full flex-col items-center justify-center px-5 pt-6 pb-5 glass">
+      <h1 className="mb-10 text-2xl transition-all duration-100 text-center">
         {name}
       </h1>
       <p className="mb-10 text-center ">
@@ -22,7 +22,7 @@ function RepoCard({ name, description, language, stars }: Props) {
           <div
             className={`h-3 w-3 rounded-xl ${getLanguageColor(language)}`}
           ></div>
-          <span>{language}</span>
+          <span className="font-mono text-slate-400">{language}</span>
         </div>
         <span className="flex items-center gap-2">
           {" "}

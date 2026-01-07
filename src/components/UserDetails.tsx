@@ -37,21 +37,25 @@ function UserDetails({ profileInfo }: Props) {
             title="Followers"
             value={profileInfo.followers}
             Icon={User}
+            variant="compact"
           />
           <StatCard
             title="Following"
             value={profileInfo.following}
             Icon={UserPlus}
+            variant="compact"
           />
           <StatCard
             title="Repositories"
             value={profileInfo.public_repos}
             Icon={FolderGit2}
+            variant="compact"
           />
           <StatCard
             title="Created"
             value={profileInfo.created_at.substring(0, 4)}
             Icon={CalendarPlus}
+            variant="compact"
           />
         </div>
       </div>
