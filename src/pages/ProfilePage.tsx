@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import type { IRepository, IUser } from "../types";
 import UserDetails from "../components/UserDetails";
 import RepoList from "../components/RepoList";
+import Dashboard from "../components/Dashboard";
 
 function ProfilePage() {
   const { username } = useParams<{ username: string }>();
@@ -44,6 +45,7 @@ function ProfilePage() {
   return (
     <div>
       <UserDetails profileInfo={profileInfo} />
+      <Dashboard repos={repos} />
       <RepoList repos={repos} />
     </div>
   );
