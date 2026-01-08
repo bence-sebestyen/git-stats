@@ -12,17 +12,16 @@
   body {
     @apply bg-gradient-to-br from-slate-950 via-slate-950 to-indigo-950 text-slate-50 antialiased;
     min-height: 100vh;
+    font-family: "Bricolage Grotesque", sans-serif;
   }
 
-  h1 {
-    font-family: "Bricolage Grotesque";
+  h1,
+  h3 {
     font-weight: 700;
   }
 
   .glass {
-    @apply bg-slate-900/40 backdrop-blur-xl;
-
-    @apply border border-white/10;
+    @apply bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-[2.5rem] transition-all duration-300;
 
     background-image: linear-gradient(
       135deg,
@@ -30,13 +29,8 @@
       rgba(255, 255, 255, 0) 100%
     );
 
-    @apply shadow-2xl;
-
-    @apply rounded-[2.5rem];
-
-    @apply transition-all duration-300;
     &:hover {
-      @apply bg-slate-900/50;
+      @apply bg-slate-900/70;
     }
   }
 
@@ -54,6 +48,5 @@
       @apply border-purple-500/50 bg-slate-900/60 ring-4 ring-purple-500/10;
       box-shadow: inset 0 0 20px rgba(168, 85, 247, 0.05);
     }
-    font-family: "Bricolage Grotesque";
   }
 }
