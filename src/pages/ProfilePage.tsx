@@ -5,6 +5,7 @@ import type { IRepository, IUser } from "../types";
 import UserDetails from "../components/UserDetails";
 import RepoList from "../components/RepoList";
 import Dashboard from "../components/Dashboard";
+import { Frown } from "lucide-react";
 
 function ProfilePage() {
   const { username } = useParams<{ username: string }>();
@@ -35,18 +36,24 @@ function ProfilePage() {
 
   if (loading)
     return (
-      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-64px)] gap-6">
+      <div className="flex flex-col items-center justify-center min-h-[calc(100dvh-64px)] gap-6">
         <div className="border-4 border-purple-500/20 border-t-purple-500 w-16 h-16 rounded-full animate-spin"></div>
         <h1 className="animate-pulse text-2xl">Scanning git history...</h1>
       </div>
     );
-  if (!profileInfo) return <h1>User not found or an error occured.</h1>;
+  if (!profileInfo)
+    return (
+      <div className="flex items-center justify-center min-h-[calc(100vh-64px)]">
+        <h1 className="text-3xl">User not found or an error occured.</h1>
+        <Frown size={40} className="ml-4" />
+      </div>
+    );
 
   return (
     <div>
       <UserDetails profileInfo={profileInfo} />
       <Dashboard repos={repos} />
-      <RepoList repos={repos} />
+      <RepoList owner={username} repos={repos} />
     </div>
   );
 }
