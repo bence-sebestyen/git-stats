@@ -18,15 +18,17 @@ function Dashboard({ repos }: Props) {
   }, [repos]);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-12 mx-15 p-5 my-10">
-      <div className="md:col-span-5 flex items-center justify-center gap-5 mx-auto glass p-6">
-        <LanguageChart repos={repos} />
-        <div className="h-full  flex flex-col justify-around items-center p-4">
+    <div className="grid grid-cols-1 md:grid-cols-12 max-w-7xl mx-auto p-4 md:px-6 gap-6 my-8">
+      <div className="md:col-span-12 lg:col-span-6 xl:col-span-5 flex flex-col sm:flex-row items-center justify-around gap-6 glass p-6 overflow-hidden">
+        <div className="w-full flex justify-center">
+          <LanguageChart repos={repos} />
+        </div>
+        <div className="w-full flex flex-row sm:flex-col md:flex-row lg:flex-col min-[850px]:gap-12 min-[900px]:gap-24 lg:gap-4 justify-center gap-4 p-2">
           <StatCard title="Stars" value={totalStars.stars} Icon={Star} />
           <StatCard title="Forks" value={totalStars.forks} Icon={GitFork} />
         </div>
       </div>
-      <div className="md:col-span-7 p-6 flex items-center justify-center glass">
+      <div className="md:col-span-12 lg:col-span-6 xl:col-span-7 p-6 flex items-center justify-center glass overflow-hidden min-h-[300px] md:min-h-0">
         <ActivityChart repos={repos} />
       </div>
     </div>
