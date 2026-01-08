@@ -9,7 +9,7 @@ interface Props {
 function UserDetails({ profileInfo }: Props) {
   return (
     <div className="mx-auto p-6 max-w-5xl flex items-center justify-center">
-      <div className="flex infocard flex-col lg:flex-row items-center justify-between gap-10 justify-center pb-5 border-purple-500/50">
+      <div className="infocard lg:flex-row gap-10 pb-5">
         <div className="flex flex-col md:flex-row items-center gap-6 flex-1 p-3">
           <img
             src={profileInfo.avatar_url}
