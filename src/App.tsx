@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/user/:username" element={<ProfilePage />}></Route>
       </Routes>
+      <Analytics />
     </BrowserRouter>
   );
 }
