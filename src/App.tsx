@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
@@ -14,6 +15,7 @@ function App() {
         <Route path="/user/:username" element={<ProfilePage />}></Route>
       </Routes>
       <Analytics />
+      <SpeedInsights />
     </BrowserRouter>
   );
 }
